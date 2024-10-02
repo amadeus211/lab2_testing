@@ -37,4 +37,18 @@ public class Bank {
         }
         balance -= amount;
     }
+
+    public void many_operations(int amount_of_operations) {
+        for (int i = 0; i < amount_of_operations; i++) {
+            double randomAmount = 10 + Math.random() * 10;
+            if (i % 2 == 0) {
+                plus_balance(randomAmount);
+            } else {
+                if (randomAmount <= getBalance()) {
+                    minus_balance(randomAmount);
+                }
+            }
+        }
+    }
+
 }

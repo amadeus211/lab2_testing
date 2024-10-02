@@ -61,4 +61,17 @@ public class BankTest {
         assertEquals("Amount must be positive", exception.getMessage());
     }
 
+    @Test
+    public void testManyOperationsWithoutErrors() {
+        Bank bank = new Bank(100.0);
+        int operations = 100000;
+
+        bank.many_operations(operations);
+
+        assertTrue(bank.getBalance() >= 0, "Баланс не повинен бути від'ємним");
+
+        assertTrue(bank.getBalance() < 1000000, "Баланс не повинен бути надто великим");
+    }
+
+
 }
