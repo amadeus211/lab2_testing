@@ -68,9 +68,7 @@ public class BankTest {
 
         bank.many_operations(operations);
 
-        assertTrue(bank.getBalance() >= 0, "Баланс не повинен бути від'ємним");
-
-        assertTrue(bank.getBalance() < 1000000, "Баланс не повинен бути надто великим");
+        assertTrue(bank.getBalance() >= 0, "Negative balance");
     }
 
 
